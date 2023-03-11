@@ -2,7 +2,7 @@
 function initMap() {
     // Your location
     // 15.440581338578049, 75.02733567181005
-    const loc = { lat: 15.440581338578049, lng: 75.02733567181005 };
+    const loc = { lat: 12.9716, lng:  77.5946 };
     // Centered map on location
     const map = new google.maps.Map(document.querySelector('.map'), {
       zoom: 14,
@@ -108,7 +108,25 @@ function initMap() {
   }
 
   document.getElementById("submit").addEventListener("click", function() {
-    alert("Sorry!! The site is under devlopment...Please go ahead with the resume");
+    const formData = new FormData(myForm);
+    const name = formData.get("name")
+    const email = formData.get("email")
+    const message = formData.get("message")
+  
+    if(name.length === 0 || email.length === 0 || message.length === 0  ){
+      alert("Please enter all the three fields to send a message");
+    }else{
+      const details = {
+        name,
+        email,
+        message
+      }
+      emailjs.init('VjoJB5VsxbTxxP7CW');
+      emailjs.send("service_9x5z3ga","template_r55zuag",details)
+      alert('Message sent successfully...!')
+    }
+   
+    // alert("Sorry!! The site is under devlopment...Please go ahead with the resume");
   });
 
   function myFunction() {
