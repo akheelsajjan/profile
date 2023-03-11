@@ -1,3 +1,3 @@
 # profile
 Blog
-Link: https://akheelsajjan.github.io/profile/
+Link: https://akheelsajjan.netlify.app/
