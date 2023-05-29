@@ -123,7 +123,10 @@ function initMap() {
       }
       emailjs.init('VjoJB5VsxbTxxP7CW');
       emailjs.send("service_9x5z3ga","template_r55zuag",details)
-      alert('Message sent successfully...!')
+      alert('Message sent successfully...! Form disabled')
+      myForm.reset()
+      myForm.disabled = true
+      document.getElementById("submit").disabled = true 
     }
    
     // alert("Sorry!! The site is under devlopment...Please go ahead with the resume");
